@@ -1,0 +1,18 @@
+name: Run with PHPStan
+
+on: [push]
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add packagist repo access
+        run: composer config --global --auth http-basic.repo.packagist.com ${{ secrets.PACKAGIST_ORG_USER }} ${{ secrets.PACKAGIST_ORG_TOKEN }}
+
+      - name: Install composer dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist --dev
+
+      - name: PHPStan Static Analysis
+        run: "vendor/bin/phpstan analyse *Tap.php -l 5 --xdebug"

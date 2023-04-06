@@ -1,0 +1,32 @@
+{
+    "type": "SCHEMA",
+	"stream": "{{table_name}}",
+	"key_properties": ["id"],
+    "properties": {
+		"string_field": {
+	    	"type": ["null", "string"]
+		},
+      	"datetime_field": {
+            "type": ["null", "string"],
+            "format": "date-time"
+		},
+		"integer_field": {
+			"type": ["null", "integer"]
+		},
+		"double_field": {
+			"type": ["null", "number"]
+		}
+    }
+},
+{
+    "type": "RECORD",
+    "stream": "{{table_name}}",
+	"key_properties": ["id"],
+    "record": {
+        "id": 1,
+		"string_field": "string",
+      	"datetime_field": "2022-09-15 15:50:12",
+		"integer_field": 1,
+		"double_field": 1.23
+    }
+}

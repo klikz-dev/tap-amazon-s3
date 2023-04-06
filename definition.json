@@ -1,0 +1,48 @@
+{
+  "name": "Amazon S3",
+  "version": "1.0.0",
+  "description": "Import report data in Amazon Simple Storage Service bucket.",
+  "instructions": "",
+  "known_limitations": [],
+  "use_tables": true,
+  "logo_path": "logo.png",
+  "full_replace": true,
+  "settings": [
+    {
+      "name": "access_key",
+      "friendly_name": "Access Key ID",
+      "description": "",
+      "is_secure": true,
+      "is_required": true,
+      "setting_type": "integration",
+      "ordinal_position": 1
+    },
+    {
+      "name": "secret_key",
+      "friendly_name": "Secret Access Key",
+      "description": "",
+      "is_secure": true,
+      "is_required": true,
+      "setting_type": "integration",
+      "ordinal_position": 2
+    },
+    {
+      "name": "region",
+      "friendly_name": "AWS Region",
+      "description": "",
+      "is_secure": false,
+      "is_required": true,
+      "setting_type": "integration",
+      "ordinal_position": 3
+    },
+    {
+      "name": "bucket_name",
+      "friendly_name": "Amazon S3 Bucket Name",
+      "description": "",
+      "is_secure": false,
+      "is_required": true,
+      "setting_type": "integration",
+      "ordinal_position": 4
+    }
+  ]
+}

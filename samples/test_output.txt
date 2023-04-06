@@ -1,0 +1,6 @@
+{
+    "type": "TEST",
+    "stream": "{{table_name}}",
+    "result": true,
+    "message": "Your sync broke yo"
+}

@@ -1,0 +1,24 @@
+name: Unit Tests
+
+on:
+  push:
+
+jobs:
+  # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Add packagist repo access
+        run: composer config --global --auth http-basic.repo.packagist.com ${{ secrets.PACKAGIST_ORG_USER }} ${{ secrets.PACKAGIST_ORG_TOKEN }}
+      - name: Install composer dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Execute PHPUnit Tests
+        run: vendor/bin/phpunit

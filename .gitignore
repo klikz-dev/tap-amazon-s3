@@ -1,0 +1,4 @@
+vendor/
+.phpunit.result.cache
+tap.log
+tap-dry-run.log

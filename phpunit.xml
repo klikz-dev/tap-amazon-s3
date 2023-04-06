@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.5/phpunit.xsd"
+    colors="true"
+>
+    <testsuites>
+        <testsuite name="">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <const name="PHPUNIT_TEST_RUNNING" value="true"/>
+        <ini name="max_execution_time" value="0"/>
+    </php>
+</phpunit>
